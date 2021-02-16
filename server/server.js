@@ -9,9 +9,10 @@ server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 
 server.use('/api/v1', patientRouter)
-server.use('/', (req, res) => {
-  res.json({ "status": "ok" })
-})
+
+// server.use('/', (req, res) => {
+//   res.json({ "status": "ok" })
+// })
 
 server.listen(PORT, () => {
   console.log(`Server has been started at http://localhost:${PORT}...`)
