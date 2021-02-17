@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 5000
 
 const server = express()
 
+server.use(express.static(resolve(__dirname, '../dist')))
+
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }))
 
