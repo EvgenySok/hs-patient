@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const patientRouter = require('./routes/patient.router')
+const { resolve } = require('path')
+
 
 require('dotenv').config()
 
