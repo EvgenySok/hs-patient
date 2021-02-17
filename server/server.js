@@ -1,6 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const patientRouter = require('./routes/patient.router')
+
+require('dotenv').config()
+
 const PORT = process.env.PORT || 5000
 
 const server = express()

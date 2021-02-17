@@ -1,4 +1,4 @@
-const db = require('../db')
+const db = require('../../db')
 
 class PatientController {
 
@@ -43,7 +43,7 @@ class PatientController {
     const patient = await db.query(
       'DELETE FROM patient where id = $1', [id]
     )
-    res.json(patient.rows[0])
+    res.json(patient)
   }
 }
 
