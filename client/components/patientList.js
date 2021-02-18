@@ -1,12 +1,10 @@
 import React from 'react'
 import { Api } from '../secondaryFunctions'
 
-const PatientList = ({ visibleData,setVisibleData, setPatientWhoseDataChange, setIsPatientList }) => {
+const PatientList = ({ visibleData, setVisibleData, setPatientWhoseDataChange, setIsPatientList }) => {
 
   const setPatient = (e, patientId) => {
     e.preventDefault()
-    console.log('console:', patientId)
-
     setPatientWhoseDataChange(patientId)
     setIsPatientList(false)
   }
@@ -14,11 +12,36 @@ const PatientList = ({ visibleData,setVisibleData, setPatientWhoseDataChange, se
   const delPatient = async (e, patientId) => {
     e.preventDefault()
     await Api.deletePatient(patientId)
-    console.log('console:', patientId)
     const newData = await Api.getPatients()
     setVisibleData(newData)
   }
 
+  const sort = (e, field) => {
+    e.preventDefault()
+    switch (field) {
+      case 'surname': case 'sex': { // strings
+        const newVisibleData = [...visibleData].sort((a, b) => a[field].localeCompare(b[field]))
+        if (JSON.stringify(visibleData) === JSON.stringify(newVisibleData)) {
+          setVisibleData(newVisibleData.reverse())
+        } else {
+          setVisibleData(newVisibleData)
+        }
+        return null
+      }
+      case 'policynumber': { // numbers
+        const newVisibleData = [...visibleData].sort((a, b) => +a[field] - +b[field])
+        if (JSON.stringify(visibleData) === JSON.stringify(newVisibleData)) {
+          setVisibleData(newVisibleData.reverse())
+        } else {
+          setVisibleData(newVisibleData)
+        }
+        return null
+      }
+      default:
+        return null
+    }
+  }
+  console.log('visibleData :', visibleData)
   return (
     <div id="board-list">
       <div className="container">
@@ -26,10 +49,16 @@ const PatientList = ({ visibleData,setVisibleData, setPatientWhoseDataChange, se
           <thead>
             <tr>
               <th scope="col" className="th-num">№</th>
-              <th scope="col" className="th-title">Patient</th>
-              <th scope="col" className="th-title">Sex</th>
+              <th scope="col" className="th-title">
+                <a href="!#" onClick={(e) => sort(e, 'surname')}>Patient</a>
+              </th>
+              <th scope="col" className="th-title">
+                <a href="!#" onClick={(e) => sort(e, 'sex')}>Sex</a>
+              </th>
               <th scope="col" className="th-title">Adress</th>
-              <th scope="col" className="th-date">Policy number</th>
+              <th scope="col" className="th-date">
+                <a href="!#" onClick={(e) => sort(e, 'policynumber')}>Policy number</a>
+              </th>
               <th scope="col" className="th-date">Date of birth</th>
               <th scope="col" className="th-title">Actions</th>
             </tr>

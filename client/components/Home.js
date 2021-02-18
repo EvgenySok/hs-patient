@@ -9,8 +9,6 @@ const Home = () => {
   const [visibleData, setVisibleData] = useState([])
   const [isPatientList, setIsPatientList] = useState(true)
   const [patientWhoseDataChange, setPatientWhoseDataChange] = useState('')
-  console.log('patientWhoseDataChange:', patientWhoseDataChange)
-
 
   useEffect(async () => {
     if (patientsData.length === 0) {

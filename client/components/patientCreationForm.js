@@ -10,7 +10,6 @@ const PatientCreationForm = ({ setPatientsData, patientWhoseDataChange, setPatie
     const data = fields.reduce((acc, field) => {
       return { ...acc, [field]: e.target.elements[field].value }
     }, {})
-    console.log(data)
     if (patientWhoseDataChange) {
       await Api.updatePatient({ ...data, id: String(patientWhoseDataChange) })
       const newData = await Api.getPatients()
@@ -21,7 +20,6 @@ const PatientCreationForm = ({ setPatientsData, patientWhoseDataChange, setPatie
       setPatientsData(newData)
     }
     setPatientWhoseDataChange('')
-
   }
 
   const getPatientDataForField = (nameField) => {
