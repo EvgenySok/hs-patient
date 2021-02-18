@@ -33,7 +33,7 @@ const config = {
   optimization: optimization(),
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: '[name].[hash:8].js',
+    filename: '[name].[fullhash:8].js',
   },
   devServer: {
     open: isDev,
@@ -104,7 +104,7 @@ const config = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name]-[hash:8].css',
+      filename: '[name]-[fullhash:8].css',
       chunkFilename: '[id].css',
       ignoreOrder: false,
     }),

@@ -1,4 +1,4 @@
-create TABLE patient(
+CREATE TABLE patient(
   id SERIAL PRIMARY KEY,
   surname VARCHAR(255),
   name VARCHAR(255),
