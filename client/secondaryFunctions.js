@@ -54,4 +54,4 @@ export const Api = {
   }
 }
 
-export const s = 3
+export const summ = (a, b) => a + b
