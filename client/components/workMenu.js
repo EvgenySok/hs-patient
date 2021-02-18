@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
-const WorkMenu = ({ setVisibleData, patientsData, setIsPatientList }) => {
+const WorkMenu = ({ setVisibleData, patientsData, setIsPatientList, setPatientWhoseDataChange }) => {
   // id, surname, name, patronymic, sex, datebirth, adress, policynumber
   const [inputValue, setInputValue] = useState('')
   const search = (e) => {
     e.preventDefault()
     if (inputValue.trim()) {
+      setPatientWhoseDataChange('')
       const searchResults = patientsData.filter(patient => patient.surname === inputValue.trim() || patient.policynumber === inputValue.trim())
       setVisibleData(searchResults)
       setIsPatientList(true)
@@ -13,6 +14,7 @@ const WorkMenu = ({ setVisibleData, patientsData, setIsPatientList }) => {
   }
   const showAll = (e) => {
     e.preventDefault()
+    setPatientWhoseDataChange('')
     setVisibleData(patientsData)
     setIsPatientList(true)
   }

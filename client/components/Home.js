@@ -25,7 +25,11 @@ const Home = () => {
         </div>
       </div>
 
-      <WorkMenu setVisibleData={setVisibleData} patientsData={patientsData} setIsPatientList={setIsPatientList} />
+      <WorkMenu
+        setVisibleData={setVisibleData}
+        patientsData={patientsData}
+        setIsPatientList={setIsPatientList}
+        setPatientWhoseDataChange={setPatientWhoseDataChange} />
 
       {isPatientList ?
         <PatientList
