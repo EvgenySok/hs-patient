@@ -41,7 +41,6 @@ const PatientList = ({ visibleData, setVisibleData, setPatientWhoseDataChange, s
         return null
     }
   }
-  console.log('visibleData :', visibleData)
   return (
     <div id="board-list">
       <div className="container">
@@ -73,7 +72,7 @@ const PatientList = ({ visibleData, setVisibleData, setPatientWhoseDataChange, s
                 <td>{patient.adress}</td>
                 <td>{patient.policynumber}</td>
                 <td>
-                  <button type="button" className="btn btn-tabl" onClick={(e) => delPatient(e, patient.id)} > Del</button>
+                  <button type="button" className="btn btn-tabl" onClick={(e) => delPatient(e, patient.id)} >Del</button>
                   <button type="button" className="btn btn-tabl" onClick={(e) => setPatient(e, patient.id)}>Edit</button>
                 </td>
 
