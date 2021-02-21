@@ -1,25 +1,31 @@
 import React from 'react'
 import { Api } from '../secondaryFunctions'
 
+export const fields = ['surname', 'name', 'patronymic', 'sex', 'datebirth', 'adress', 'policynumber']
+
+
 const PatientCreationForm = ({ setPatientsData, patientWhoseDataChange, setPatientWhoseDataChange, patientsData }) => {
 
-  const fields = ['surname', 'name', 'patronymic', 'sex', 'datebirth', 'adress', 'policynumber']
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const data = fields.reduce((acc, field) => {
-      return { ...acc, [field]: e.target.elements[field].value }
-    }, {})
-    if (patientWhoseDataChange) {
-      await Api.updatePatient({ ...data, id: String(patientWhoseDataChange) })
+    try {
+      const data = fields.reduce((acc, field) => {
+        return { ...acc, [field]: e.target.elements[field].value }
+      }, {})
+
+      if (patientWhoseDataChange) {
+        await Api.updatePatient({ ...data, id: String(patientWhoseDataChange) })
+      } else {
+        await Api.createPatient(data)
+      }
       const newData = await Api.getPatients()
       setPatientsData(newData)
-    } else {
-      await Api.createPatient(data)
-      const newData = await Api.getPatients()
-      setPatientsData(newData)
+      setPatientWhoseDataChange('')
+    } catch (error) {
+      console.log('handleSubmit error :', error)
     }
-    setPatientWhoseDataChange('')
+
   }
 
   const getPatientDataForField = (nameField) => {
@@ -44,7 +50,7 @@ const PatientCreationForm = ({ setPatientsData, patientWhoseDataChange, setPatie
             </div>
           ))}
 
-          <button type="submit" className="btn btn-dark">Submit</button>
+          <button type="submit" onClick={handleSubmit} className="btn btn-dark">Submit</button>
         </form>
       </div>
     </div>

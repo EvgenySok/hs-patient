@@ -15,7 +15,6 @@ const PatientList = ({ visibleData, setVisibleData, setPatientWhoseDataChange, s
     const newData = await Api.getPatients()
     setVisibleData(newData)
   }
-
   const sort = (e, field) => {
     e.preventDefault()
     switch (field) {
@@ -41,6 +40,7 @@ const PatientList = ({ visibleData, setVisibleData, setPatientWhoseDataChange, s
         return null
     }
   }
+
   return (
     <div id="board-list">
       <div className="container">
