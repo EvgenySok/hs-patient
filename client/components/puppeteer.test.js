@@ -19,18 +19,16 @@ describe('Test', () => {
                 ]
             })
             page = await browser.newPage()
-            await page.goto('http://localhost:8080/', { waitUntil: 'domcontentloaded' })
+            await page.goto(ENV_LOCAL, { waitUntil: 'domcontentloaded' })
+        })
+        afterAll(async () => {
+            await browser.close()
         })
 
-        //   const browser = await puppeteer.launch({
-        //       args: chrome.args,
-        //       executablePath: await chrome.executablePath,
-        //       headless: chrome.headless,
-        //   })
         it('should be titled "Google"', async () => {
-                await expect(page.evaluate(() =>
-                    document.body.textContent.includes('Patient List of Hospital №1')))
-                    .toBeTruthy()
+            await expect(page.evaluate(() =>
+                document.body.textContent.includes('Patient List of Hospital №1')))
+                .toBeTruthy()
             // await expect(page.title()).resolves.toMatch('Google');
             await page.screenshot({ path: 'screenshot.png', fullPage: true })
 
