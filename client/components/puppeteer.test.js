@@ -25,11 +25,10 @@ describe('Test', () => {
             await browser.close()
         })
 
-        it('should be titled "Google"', async () => {
+        it('should contain "Patient List of Hospital №1"', async () => {
             await expect(page.evaluate(() =>
                 document.body.textContent.includes('Patient List of Hospital №1')))
                 .toBeTruthy()
-            // await expect(page.title()).resolves.toMatch('Google');
             await page.screenshot({ path: 'screenshot.png', fullPage: true })
 
         });
