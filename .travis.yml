@@ -18,12 +18,11 @@ deploy:
   api_key:
     secure: sm9F3vuezlQkyqI+Nr4AAVPmm8yo8MbD5WF8iffN7JB/OlA//Lj25XSdL4+FkLHTa+JBCvFKpRHLQxqb8f13wFxSNy2zZPAby6XAjMX6u6bL0btgu3EHPFCtjc6TUDPftXztoYwqe0staFV1lfdwrQXLFMHsT30ufICcTDlGbYhVCExxAmHEr0DjlAlbzt3vdMVGvtzlJmSda0y4spDfavShSnQPwIXF1KrHD6klWCjGFM5gxDZPehO25+n0UWJxfcHqGDlxkAUPq3wkH6RJZvrKaejuZtAci7dI8NQj9Ua1PIfbO9N/m8dDZZZYFk49Kl+eDX4Atp6gEbxtv0A+9Zko68y7DfR1PMXWkOhLWztX/BNVfbL27MG7n3cSt3q7fL7U5SVTBdZ1YT8riWTcOuTDwoMD0lbX7w7Q8h3FF0bU5w+t1wNUESVS3OPIElwjrganKJgaMACZFeoOjYDE65c3JYnjCa+yT4b8o/EKMQSHT2TKLuqOWgNUdzBDOvkfljWciY+8S8jMUXm/Yob+h99txg2T4eIh89RpKy/b285fzqHqr7cmVnneFUntVUyGEhwjvCUajg4/b3FMpz6srihk3JxSwRGcMD90ujUzQMNQr9mg45/kaR2yVPWZeTUVTA6DY60j6nu9cgVmnDDiQxNb33In69Ybl01UO0am0h8=
 
+services: xvfb
 addons:
   chrome: stable
 before_install:
    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
-install:
-  - yarn install
 script:
   - yarn test
