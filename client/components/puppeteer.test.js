@@ -7,22 +7,24 @@ describe('Test', () => {
 
     try {
         beforeAll(async () => {
-            // browser = await puppeteer.launch({
-            //     executablePath: '/usr/bin/chromium-browser',
-            //     args: [
-            //         '--disable-gpu',
-            //         '--disable-dev-shm-usage',
-            //         '--disable-setuid-sandbox',
-            //         '--no-first-run',
-            //         '--no-sandbox',
-            //         '--no-zygote',
-            //         '--single-process',
-            //     ]
-            // })
-            browser = await puppeteer.launch()
+            try {
+                browser = await puppeteer.launch({
+                    executablePath: '/usr/bin/chromium-browser',
+                    args: [
+                        '--disable-gpu',
+                        '--disable-dev-shm-usage',
+                        '--disable-setuid-sandbox',
+                        '--no-first-run',
+                        '--no-sandbox',
+                        '--no-zygote',
+                        '--single-process',
+                    ]
+                })
+            } catch (error) {
+                browser = await puppeteer.launch()
+            }
             page = await browser.newPage()
-            // await page.goto(ENV_LOCAL, { waitUntil: 'domcontentloaded' })
-            await page.goto('http://localhost', { waitUntil: 'domcontentloaded' })
+            await page.goto(ENV_LOCAL, { waitUntil: 'domcontentloaded' })
         })
         afterAll(async () => {
             await browser.close()

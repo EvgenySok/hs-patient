@@ -104,7 +104,7 @@
       "\\.(css|scss)$": "identity-obj-proxy"
     },
     "globals": {
-      "ENV_LOCAL": "http://localhost:8080"
+      "ENV_LOCAL": "http://localhost:5000"
   }
   }
 }
