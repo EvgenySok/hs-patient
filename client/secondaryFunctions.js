@@ -55,3 +55,7 @@ export const Api = {
 }
 
 export const summ = (a, b) => a + b
+
+export const timeout = async (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}

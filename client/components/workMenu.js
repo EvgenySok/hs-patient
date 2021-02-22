@@ -5,8 +5,6 @@ const WorkMenu = ({ setVisibleData, patientsData, setIsPatientList, setPatientWh
   const [inputValue, setInputValue] = React.useState('')
   const search = (e) => {
     e.preventDefault()
-    console.log('inputValue:', inputValue)
-    
     if (inputValue.trim()) {
       setPatientWhoseDataChange('')
       const searchResults = patientsData.filter(patient => patient.surname === inputValue.trim() || patient.policynumber === inputValue.trim())
