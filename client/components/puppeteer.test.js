@@ -22,7 +22,7 @@ describe('Test', () => {
             browser = await puppeteer.launch()
             page = await browser.newPage()
             // await page.goto(ENV_LOCAL, { waitUntil: 'domcontentloaded' })
-            await page.goto('/', { waitUntil: 'domcontentloaded' })
+            await page.goto('http://localhost', { waitUntil: 'domcontentloaded' })
         })
         afterAll(async () => {
             await browser.close()
