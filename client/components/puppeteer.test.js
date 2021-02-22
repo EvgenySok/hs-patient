@@ -4,8 +4,7 @@ const puppeteer = require('puppeteer')
 describe('Test', () => {
     let page
     let browser
-    console.log('NODE_ENV:', process.env.NODE_ENV)
-    
+
     try {
         beforeAll(async () => {
             // browser = await puppeteer.launch({
@@ -22,7 +21,8 @@ describe('Test', () => {
             // })
             browser = await puppeteer.launch()
             page = await browser.newPage()
-            await page.goto(ENV_LOCAL, { waitUntil: 'domcontentloaded' })
+            // await page.goto(ENV_LOCAL, { waitUntil: 'domcontentloaded' })
+            await page.goto('/', { waitUntil: 'domcontentloaded' })
         })
         afterAll(async () => {
             await browser.close()
