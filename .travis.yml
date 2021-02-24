@@ -2,23 +2,27 @@ sudo: required
 language: node_js
 node_js:
   - 15
+branches:
+  only:
+  - master
 services: xvfb
 
 dist: xenial
 addons:
   chrome: stable
   hostname: localhost
+
 before_install:
   - # start your web application and listen on `localhost`
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+install:
+  - yarn install
 before_script:
   - yarn build
   - yarn start
-branches:
-  only:
-  - master
-  script:
+script:
   - yarn test
+
 deploy:
   provider: heroku
   app: hs-patient
