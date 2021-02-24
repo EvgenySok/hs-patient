@@ -11,7 +11,7 @@ const PatientCreationForm = ({ setPatientsData, patientWhoseDataChange, setPatie
     e.preventDefault()
     try {
       const data = fields.reduce((acc, field) => {
-        return { ...acc, [field]: e.target.elements[field].value }
+        return { ...acc, [field]: e.target.form[field].value }
       }, {})
 
       if (patientWhoseDataChange) {
@@ -36,8 +36,8 @@ const PatientCreationForm = ({ setPatientsData, patientWhoseDataChange, setPatie
   return (
     <div id="board-list">
       <div className="container">
-        <h2>{patientWhoseDataChange ? 'Editing patient data' : 'Patient creation'} </h2>
-        <form onSubmit={handleSubmit}>
+        <h2>{patientWhoseDataChange ? 'Editing patient data' : 'Patient creation'}</h2>
+        <form id="patient_form" onSubmit={handleSubmit}>
           {fields.map(field => (
             <div key={field} className="field">
               <label htmlFor="surname" className="label">{`Enter ${field}:`}</label>
@@ -50,7 +50,7 @@ const PatientCreationForm = ({ setPatientsData, patientWhoseDataChange, setPatie
             </div>
           ))}
 
-          <button type="submit" onClick={handleSubmit} className="btn btn-dark">Submit</button>
+          <button type="submit" name="form submit" onClick={handleSubmit} className="btn btn-dark">Submit</button>
         </form>
       </div>
     </div>

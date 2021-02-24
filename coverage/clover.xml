@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1613996378752" clover="3.2.0">
-  <project timestamp="1613996378752" name="All files">
+<coverage generated="1614183996991" clover="3.2.0">
+  <project timestamp="1614183996991" name="All files">
     <metrics statements="101" coveredstatements="45" conditionals="24" coveredconditionals="12" methods="34" coveredmethods="13" elements="159" coveredelements="70" complexity="0" loc="101" ncloc="101" packages="2" files="5" classes="5"/>
     <package name="client">
       <metrics statements="21" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
-      <file name="secondaryFunctions.js" path="/mnt/c/Users/work4/Documents/projects/hs/client/secondaryFunctions.js">
+      <file name="secondaryFunctions.js" path="/mnt/c/Users/work4/Documents/projects/hs-patient/client/secondaryFunctions.js">
         <metrics statements="21" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
-        <line num="2" count="4" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
@@ -24,14 +24,14 @@
         <line num="48" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="57" count="4" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
+        <line num="57" count="5" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
       </file>
     </package>
     <package name="client.components">
       <metrics statements="80" coveredstatements="42" conditionals="24" coveredconditionals="12" methods="26" coveredmethods="12"/>
-      <file name="Home.js" path="/mnt/c/Users/work4/Documents/projects/hs/client/components/Home.js">
+      <file name="Home.js" path="/mnt/c/Users/work4/Documents/projects/hs-patient/client/components/Home.js">
         <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="3" type="stmt"/>
@@ -44,10 +44,10 @@
         <line num="16" count="0" type="stmt"/>
         <line num="20" count="3" type="stmt"/>
       </file>
-      <file name="patientCreationForm.js" path="/mnt/c/Users/work4/Documents/projects/hs/client/components/patientCreationForm.js">
+      <file name="patientCreationForm.js" path="/mnt/c/Users/work4/Documents/projects/hs-patient/client/components/patientCreationForm.js">
         <metrics statements="19" coveredstatements="17" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="6"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
@@ -66,7 +66,7 @@
         <line num="36" count="2" type="stmt"/>
         <line num="42" count="14" type="stmt"/>
       </file>
-      <file name="patientList.js" path="/mnt/c/Users/work4/Documents/projects/hs/client/components/patientList.js">
+      <file name="patientList.js" path="/mnt/c/Users/work4/Documents/projects/hs-patient/client/components/patientList.js">
         <metrics statements="31" coveredstatements="6" conditionals="10" coveredconditionals="2" methods="12" coveredmethods="2"/>
         <line num="4" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
@@ -100,7 +100,7 @@
         <line num="75" count="0" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
       </file>
-      <file name="workMenu.js" path="/mnt/c/Users/work4/Documents/projects/hs/client/components/workMenu.js">
+      <file name="workMenu.js" path="/mnt/c/Users/work4/Documents/projects/hs-patient/client/components/workMenu.js">
         <metrics statements="20" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="3"/>
         <line num="3" count="2" type="stmt"/>
         <line num="5" count="9" type="stmt"/>

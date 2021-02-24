@@ -56,7 +56,7 @@ describe("PatientCreationForm component", () => {
     e = {
       preventDefault: jest.fn(),
       target: {
-        elements: { ...fields.reduce((acc, it) => ({ ...acc, [it]: { value: null } }), {}) }
+        form: { ...fields.reduce((acc, it) => ({ ...acc, [it]: { value: null } }), {}) }
       }
     };
   })
