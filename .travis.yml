@@ -19,10 +19,10 @@ before_install:
   - # start your web application and listen on `localhost`
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 install:
-  - yarn install
+  - travis_wait yarn install
 before_script:
-  - yarn build
-  - yarn start
+  - travis_wait yarn build
+  - travis_wait yarn start
 script:
   - yarn test
 
