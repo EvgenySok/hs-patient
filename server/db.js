@@ -1,8 +1,7 @@
 require('dotenv').config()
-const { Pool } = require('pg');
-const env = process.env.NODE_ENV || 'development'
-let pool
-let connectionString = {}
+const { Client } = require('pg');
+// const env = process.env.NODE_ENV || 'development'
+// let connectionString = {}
 // if (env === 'development') {
 //   connectionString = {
 //     user: 'postgres',
@@ -12,16 +11,20 @@ let connectionString = {}
 //     database: 'test'
 //   }
 // } else {
-connectionString = {
+// connectionString = {
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//     rejectUnauthorized: false
+//   }
+// }
+// }
+
+const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
-}
-// }
-if (typeof pool === 'undefined') {
-  pool = new Pool(connectionString)
-  pool.on('connect', () => console.log('connected to db'));
-}
+})
+client.on('connect', () => console.log('connected to db'));
 
-module.exports = pool
+module.exports = client
