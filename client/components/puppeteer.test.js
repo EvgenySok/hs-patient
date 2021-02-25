@@ -35,7 +35,8 @@ describe('Test with Puppeteer', () => {
                     ]
                 })
                 page = await browser.newPage()
-                await page.goto('http://localhost:8080', { waitUntil: 'domcontentloaded' })
+                // await page.goto('http://localhost:8080', { waitUntil: 'domcontentloaded' })
+                await page.goto(ENV_LOCAL, { waitUntil: 'domcontentloaded' })
             } catch (error) {
                 browser = await puppeteer.launch()
                 page = await browser.newPage()
