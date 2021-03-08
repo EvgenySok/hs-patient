@@ -24,6 +24,7 @@ describe('Test with Puppeteer', () => {
             try {
                 browser = await puppeteer.launch({
                     executablePath: '/usr/bin/chromium-browser',
+                    headless: true,
                     args: [
                         '--disable-gpu',
                         '--disable-dev-shm-usage',

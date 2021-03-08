@@ -68,9 +68,9 @@ const PatientList = ({ visibleData, setVisibleData, setPatientWhoseDataChange, s
                 <td > {id + 1}</td>
                 <th>{`${patient.surname} ${patient.name} ${patient.patronymic}`}</th>
                 <td>{patient.sex}</td>
-                <td>{patient.datebirth}</td>
                 <td>{patient.adress}</td>
                 <td>{patient.policynumber}</td>
+                <td>{patient.datebirth}</td>
                 <td>
                   <button type="button" className="btn btn-tabl" onClick={(e) => delPatient(e, patient.id)} >Del</button>
                   <button type="button" className="btn btn-tabl" onClick={(e) => setPatient(e, patient.id)}>Edit</button>
